@@ -1,3 +1,8 @@
+###Change History:
+## 2019.08.11 XIAO Yongqin download from GitHub
+#
+###################################################
+ 
 from datetime import datetime
 
 import torch
