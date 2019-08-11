@@ -1,6 +1,6 @@
 ###Change History:
 ## 2019.08.11 XIAO Yongqin download from GitHub
-#
+#             Test connection
 ###################################################
  
 from datetime import datetime
