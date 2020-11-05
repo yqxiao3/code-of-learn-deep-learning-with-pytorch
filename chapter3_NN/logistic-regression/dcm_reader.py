@@ -56,17 +56,21 @@ class DcmReader:
             series_path_list: input_path中的序列路径列表
 
         """
-        if len(os.listdir(input_path)) == 0:
+        try:
+            if len(os.listdir(input_path)) == 0:
+                return
+            # make sure all files from one series should put to one folder
+            for item in os.listdir(input_path):
+                if os.path.isfile(os.path.join(input_path, item)):
+                    series_path_list.append(input_path)
+                    break
+                else:
+                    new_dir = os.path.join(input_path, item)
+                    self.list_series_path(new_dir, series_path_list)
+            return series_path_list
+        except Exception as e:
+            self.write_error_info(str(e))
             return
-        # make sure all files from one series should put to one folder
-        for item in os.listdir(input_path):
-            if os.path.isfile(os.path.join(input_path, item)):
-                series_path_list.append(input_path)
-                break
-            else:
-                new_dir = os.path.join(input_path, item)
-                self.list_series_path(new_dir, series_path_list)
-        return series_path_list
 
     def list_study_path(self):
         study_path_list = []

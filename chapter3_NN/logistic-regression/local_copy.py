@@ -56,8 +56,8 @@ def calculate_one_by_one(reader, source_path, target_path, csv_path, study_dic, 
         study_path = os.path.join(source_path, study)
         series_list = os.listdir(study_path)
         target_file_path = os.path.join(target_path, study)
-        if not os.path.exists(target_file_path):
-            os.makedirs(target_file_path)
+        # if not os.path.exists(target_file_path):
+        #     os.makedirs(target_file_path)
         if os.path.exists(target_file_path):
             try:
                 shutil.rmtree(target_file_path)
