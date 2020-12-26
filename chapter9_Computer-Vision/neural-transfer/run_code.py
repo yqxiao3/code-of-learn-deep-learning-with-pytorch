@@ -38,7 +38,7 @@ def run_style_transfer(content_img, style_img, input_img, num_epoches=300):
 
             epoch[0] += 1
             if epoch[0] % 50 == 0:
-                print('run {}'.format(epoch))
+                print('calculate_one_by_one {}'.format(epoch))
                 print('Style Loss: {:.4f} Content Loss: {:.4f}'.format(
                     style_score.data[0], content_score.data[0]))
                 print()

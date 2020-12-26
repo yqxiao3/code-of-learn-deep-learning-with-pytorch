@@ -29,7 +29,7 @@ class DefaultConfig(object):
 
     # Visualization parameters.
     vis_dir = './vis/'
-    plot_freq = 100  # plot in tensorboard every N iterations
+    plot_freq = 100  # plt in tensorboard every N iterations
 
     # Model parameters.
     embed_dim = 512

@@ -21,7 +21,7 @@ class DefaultConfig(object):
 
     # Visualization results on tensorboard.
     # vis_dir = './vis/'
-    plot_freq = 100  # plot in tensorboard every N iterations
+    plot_freq = 100  # plt in tensorboard every N iterations
 
     # Model hyperparameters.
     use_gpu = True  # use GPU or not

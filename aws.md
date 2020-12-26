@@ -150,8 +150,8 @@ source ~/.bashrc
 【注意】目前官方默认是 cuda9，如果选择的是 p2.xlarge，则需要安装 cuda8，可以使用下面的命令来下载并安装 cuda8
 
 ```bash
-wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
-sudo sh cuda_8.0.61_375.26_linux-run
+wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-calculate_one_by_one
+sudo sh cuda_8.0.61_375.26_linux-calculate_one_by_one
 ```
 
 
@@ -172,7 +172,7 @@ Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 375.26?
 (y)es/(n)o/(q)uit: y
 Do you want to install the OpenGL libraries?
 (y)es/(n)o/(q)uit [ default is yes ]: y
-Do you want to run nvidia-xconfig?
+Do you want to calculate_one_by_one nvidia-xconfig?
 (y)es/(n)o/(q)uit [ default is no ]: n
 Install the CUDA 8.0 Toolkit?
 (y)es/(n)o/(q)uit: y

@@ -3,7 +3,10 @@
 @File: dcm_reader.py
 @Author: wenjuan.hu & yongqin.xiao
 @Date: 2020/06/11
-@Desc: Tool to read DICOM image information and save as study uid and series uid
+@Desc: 1.修改dcm图片的tag值（增、删、改）
+       2.归档dcm图片数据（归档为3层结构study/series/image）
+
+2020-11-03 only copy one dcm file to the target folder
 """
 import os
 import pydicom
@@ -59,13 +62,17 @@ class DcmReader:
             if len(os.listdir(input_path)) == 0:
                 return
             # make sure all files from one series should put to one folder
-            for item in os.listdir(input_path):
+            temp_list = os.listdir(input_path)
+            temp_list.sort()
+            for item in temp_list:
                 if os.path.isfile(os.path.join(input_path, item)):
                     series_path_list.append(input_path)
+                    print(input_path)
                     break
                 else:
                     new_dir = os.path.join(input_path, item)
-                    self.list_series_path(new_dir, series_path_list)
+                    if len(series_path_list) < 10:
+                        self.list_series_path(new_dir, series_path_list)
             return series_path_list
         except Exception as e:
             self.write_error_info(str(e))
@@ -133,6 +140,8 @@ class DcmReader:
                                 series_id = id_list["series_id"]
                                 study_dic[series_id] = series_path
                                 self.write_error_info("Different series_id for the same series {0}.".format(img_path))
+                        # only copy one dcm file to the target folder
+                        break
                     else:
                         self.write_error_info("Fail to re-save dcm file: {0}".format(img_path))
                 except Exception as e:
