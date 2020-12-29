@@ -44,7 +44,7 @@ class DataQuery:
     db = None
     cursor = None
 
-    def __init__(self, reader, ip, port=3306, user="root", password="Uii!20171120", database="ai_portal"):
+    def __init__(self, reader, ip, port=3306, user="", password="", database="ai_portal"):
         self.ip = ip
         self.port = port
         self.user = user
