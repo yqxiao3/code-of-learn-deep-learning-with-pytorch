@@ -16,6 +16,7 @@ History:
 2020-10-23  update for triage-rib (xyq)
 2020-11-06  update the check condition of algorithm finish and add the an output of the result query from db
 2020-11-09  Add a struct to record the calculation result
+2020-12-29  Update connection 
 """
 
 import os
