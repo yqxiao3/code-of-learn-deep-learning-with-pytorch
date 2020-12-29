@@ -53,7 +53,7 @@ class DataQuery:
         self.reader = reader
 
     def connect(self):
-        self.db = pymysql.connect(host=self.ip, port=3306, user="root", password="Uii!20171120",
+        self.db = pymysql.connect(host=self.ip, port=3306, user="", password="",
                                   database="ai_portal", charset='utf8')
         self.cursor = self.db.cursor()
         return self.db, self.cursor
